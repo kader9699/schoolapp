@@ -3,7 +3,7 @@ import psycopg2
 import os
 import psycopg2
 
-def get_connection():
+def get_connectione():
     conn = psycopg2.connect(
         host=os.getenv("DB_HOST"),  # Récupère l'adresse du serveur PostgreSQL depuis une variable d'environnement
         port=os.getenv("DB_PORT"),  # Récupère le port du serveur PostgreSQL depuis une variable d'environnement
@@ -13,3 +13,11 @@ def get_connection():
     )
     return conn
 
+def get_connection():
+    conn = psycopg2.connect(
+        host="localhost",
+        database="school_management",
+        user="kader",
+        password="password"
+    )
+    return conn
