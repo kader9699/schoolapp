@@ -1,11 +1,12 @@
 import streamlit as st
+from dotenv import load_dotenv
 from fonction import (obtenir_classes,enregistrer_paiement,
                     enregistrer_absence,enregistrer_paiement,ajouter_classe,
                     ajouter_enseignant,ajouter_eleve,obtenir_parents,
                     ajouter_parent,obtenir_eleves_par_classe,obtenir_parent_par_telephone,
                     obtenir_statistiques_paiements,obtenir_statistiques_absences)
 from auth_session import authentifier_utilisateur
-
+load_dotenv()
     
     
 # Fonction d'authentification
