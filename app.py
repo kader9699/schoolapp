@@ -7,8 +7,10 @@ from fonction import (obtenir_classes,enregistrer_paiement,
                     obtenir_statistiques_paiements,obtenir_statistiques_absences)
 from auth_session import authentifier_utilisateur
 load_dotenv()
-    
-    
+
+if 'authentifie' not in st.session_state:
+    st.session_state.authentifie = False
+      
 # Fonction d'authentification
 def afficher_formulaire_authentification():
     st.subheader("Authentification")
