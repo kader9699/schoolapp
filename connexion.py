@@ -3,7 +3,7 @@ import psycopg2
 import os
 import psycopg2
 
-def get_connectione():
+def get_connection():
     conn = psycopg2.connect(
         host=os.getenv("DB_HOST"),  # Récupère l'adresse du serveur PostgreSQL depuis une variable d'environnement
         port=os.getenv("DB_PORT"),  # Récupère le port du serveur PostgreSQL depuis une variable d'environnement
