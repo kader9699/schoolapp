@@ -1,7 +1,13 @@
 from connexion import get_connection
 import pandas as pd
 import bcrypt
+import streamlit as st
 
+
+conn = get_connection()
+if conn is None:
+    st.stop()
+    
 def ajouter_parent(nom, prenom, numero, mot_de_passe):
     conn = get_connection()
     cursor = conn.cursor()
