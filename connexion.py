@@ -12,7 +12,6 @@ def get_connection():
             user="kader",
             password="C2TyF6bJtKxtEsSWP2o0tjYOBv1e0HbB"
         )
-        st.write("Connexion à la base de données réussie")
         return conn
     except Exception as e:
         st.error(f"Erreur de connexion à la base de données : {e}")
