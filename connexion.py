@@ -1,6 +1,5 @@
 import psycopg2
 import streamlit as st
-import ossaudiodev
 import os
 
 def get_connection():
@@ -16,9 +15,8 @@ def get_connection():
     except Exception as e:
         st.error(f"Erreur de connexion à la base de données : {e}")
         return None
-
-
-def get_connectionee():
+    
+def get_connectione():
     try:
         conn = psycopg2.connect(
             host=os.getenv("DB_HOST"),
@@ -33,11 +31,4 @@ def get_connectionee():
         st.error(f"Erreur de connexion à la base de données : {e}")
         return None
 
-def get_connectione():
-    conn = psycopg2.connect(
-        host="localhost",
-        database="school_management",
-        user="kader",
-        password="password"
-    )
-    return conn
+

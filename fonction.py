@@ -40,21 +40,23 @@ def ajouter_enseignant(nom, prenom, numero, mot_de_passe, est_directeur=False):
     cursor.close()
     conn.close()
 
-def authentifier_enseignant(prenom, mot_de_passe):
+def authentifier_enseignant(numero, mot_de_passe):
     conn = get_connection()
     cursor = conn.cursor()
     #mot_de_passe_s = hash_password(mot_de_passe)
-    cursor.execute("SELECT id, est_directeur,mot_de_passe FROM enseignants WHERE prenom = %s AND mot_de_passe = %s", (prenom, mot_de_passe))
+    cursor.execute("SELECT id, est_directeur,mot_de_passe FROM enseignants WHERE numero = %s AND mot_de_passe = %s", (numero, mot_de_passe))
     result = cursor.fetchone()
+    print(result)
     cursor.close()
     conn.close()
     return result
 
-def authentifier_parent(prenom, mot_de_passe):
+def authentifier_parent(numero, mot_de_passe):
     conn = get_connection()
     cursor = conn.cursor()
     mot_de_passe_s = hash_password(mot_de_passe)
-    cursor.execute("SELECT id, nom FROM parents WHERE prenom = %s AND mot_de_passe = %s", (prenom, mot_de_passe))
+    cursor.execute("SELECT id, nom FROM parents WHERE numero = %s AND mot_de_passe = %s", (numero, mot_de_passe))
+
     result = cursor.fetchone()
     cursor.close()
     conn.close()

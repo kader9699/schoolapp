@@ -10,9 +10,9 @@ if 'est_parent' not in st.session_state:
     st.session_state.est_parent = False
 
 # Fonction d'authentification
-def authentifier_utilisateur(prenom, mot_de_passe):
-    enseignant = authentifier_enseignant(prenom, mot_de_passe)
-    parent = authentifier_parent(prenom, mot_de_passe)
+def authentifier_utilisateur(numero, mot_de_passe):
+    enseignant = authentifier_enseignant(numero, mot_de_passe)
+    parent = authentifier_parent(numero, mot_de_passe)
     if enseignant:
         st.session_state.authentifie = True
         st.session_state.est_directeur = enseignant[1]  # utilisateur[1] est True si directeur
@@ -26,5 +26,5 @@ def authentifier_utilisateur(prenom, mot_de_passe):
         st.success("Authentification réussie (Parent)")
         return True
     else:
-        st.error("Prénom ou mot de passe incorrect")
+        st.error("Numero ou mot de passe incorrect")
         return False

@@ -14,15 +14,15 @@ if 'authentifie' not in st.session_state:
 # Fonction d'authentification
 def afficher_formulaire_authentification():
     st.subheader("Authentification")
-    prenom = st.text_input("Prénom")
+    numero = st.text_input("Numero")
     mot_de_passe = st.text_input("Mot de passe", type='password')
     if st.button("Se connecter"):
-        if not prenom:
-            st.error("Le prenom est requis.")
+        if not numero:
+            st.error("Le numero est requis.")
         elif not mot_de_passe:
             st.error("Mot de passe est requis.")
         else:
-            authentifier_utilisateur(prenom, mot_de_passe)
+            authentifier_utilisateur(numero, mot_de_passe)
 
 def deconnexion():
     st.session_state.authentifie = False
