@@ -13,7 +13,7 @@ def get_connectione():
     )
     return conn
 
-def get_connection():
+def get_connectione():
     conn = psycopg2.connect(
         host="localhost",
         database="school_management",
